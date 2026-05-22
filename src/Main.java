@@ -4,29 +4,29 @@ import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
 
-   ArrayList<Livro> livros=new ArrayList<>();
-   Scanner scanner = new Scanner(System.in);
-   livros.add(new Livro(43,"GIGA","Gisele",1972,"3878378937"));
-   livros.add(new Livro(3,"GA","Geilse",1979,"3878564987987"));
-   livros.add(new Livro(5,"Gh","Gislsa",1999,"3454212987"));
-   for (Livro l: livros){
-      l.detalharLivro();
+      LivroRepository repository = new LivroRepository();
+
+      repository.adicionarLivro(new Livro(1, "GIGA", "Gisele", 1972, "3878378937"));
+      repository.adicionarLivro(new Livro(2, "GA", "Geilse", 1979, "3878564987987"));
+      repository.adicionarLivro(new Livro(3, "Gh", "Gislsa", 1999, "3454212987"));
+
+      repository.listarLivros();
+
+      System.out.println("Digite o ID do livro que deseja excluir:");
+      int idDelete = scanner.nextInt();
+
+      boolean removido = repository.excluirPorId(idDelete);
+
+      if (removido) {
+         System.out.println("Livro removido!");
+      } else {
+         System.out.println("ID de livro não encontrado!");
+      }
+      repository.listarLivros();
+
+      scanner.close();
    }
-       System.out.println("Digite o ID do livro que deseja deletar:");
-       int iddelete = scanner.nextInt();
-
-       boolean removido = livros.removeIf(l -> l.getId() == iddelete);
-
-       if (removido) {
-          System.out.println("Livro removido!");
-       } else {
-          System.out.println("ID de livro não encontrado!");
-       }
-       for (Livro l: livros){
-          l.detalharLivro();
-       }
-
-    }
 }
