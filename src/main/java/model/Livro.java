@@ -12,7 +12,7 @@ public class Livro {
     public Livro(){
     }
     //Abaixo um construtor com todos os atributos
-    public Livro(int id,String titulo,String autor, int anopublicacao,String isbn){
+    public Livro(int id, String titulo, String autor, int anopublicacao, String isbn){
         this.id=id;
         this.titulo=titulo;
         this.autor=autor;
