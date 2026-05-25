@@ -1,6 +1,6 @@
-
+package repository;
+import model.Livro;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class LivroRepository {
     private ArrayList<Livro> livros = new ArrayList<>();

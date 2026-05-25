@@ -1,5 +1,7 @@
 //Abaixo é o comando para importar a biblioteca para trabalhar com Arraylist
-import java.util.ArrayList;
+package controller;
+import repository.LivroRepository;
+import model.Livro;
 import java.util.Scanner;
 
 
@@ -21,7 +23,7 @@ public class Main {
       boolean removido = repository.excluirPorId(idDelete);
 
       if (removido) {
-         System.out.println("Livro removido!");
+         System.out.println("model.Livro removido!");
       } else {
          System.out.println("ID de livro não encontrado!");
       }

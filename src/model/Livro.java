@@ -1,3 +1,4 @@
+package model;
 
 //Abaixo está a classe livro e seus atributos privados
 public class Livro {
@@ -20,6 +21,7 @@ public class Livro {
     }
     //Abaixo os setters e getters dos atributos
     public void setTitulo(String titulo){
+
         this.titulo=titulo;
     }
     public String getTitulo(){
@@ -54,7 +56,7 @@ public class Livro {
     }
     //Abaixo o método para detalhar as informaçoes do livro//
     public void detalharLivro(){
-        System.out.println("====Informações do Livro====");
+        System.out.println("====Informações do model.Livro====");
         System.out.println("ID: " +id);
         System.out.println("Título: " + titulo);
         System.out.println("Autor: " +autor);
