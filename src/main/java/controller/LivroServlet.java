@@ -15,4 +15,20 @@ public class LivroServlet extends HttpServlet {
 
         request.getRequestDispatcher("listar.jsp").forward(request, response);
     }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String titulo = request.getParameter("titulo");
+        String autor = request.getParameter("autor");
+        String ano = request.getParameter("ano");
+        String isbn = request.getParameter("isbn");
+
+        System.out.println("Título recebido: " + titulo);
+        System.out.println("Autor recebido: " + autor);
+        System.out.println("Ano recebido: " + ano);
+        System.out.println("ISBN recebido: " + isbn);
+
+        response.sendRedirect("livros");
+    }
 }
