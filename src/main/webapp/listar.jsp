@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Livro" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,10 +10,58 @@
 </head>
 <body>
 
-<h1>Lista de Livros</h1>
-<p>Essa página será usada para mostrar os livros cadastrados.</p>
+<h1>Livros Cadastrados</h1>
 
-<a href="index.jsp">Voltar para o início</a>
+<%
+    List<Livro> livros = (List<Livro>) request.getAttribute("livros");
+
+    if (livros == null || livros.isEmpty()) {
+%>
+
+<p>Nenhum livro cadastrado.</p>
+
+<%
+} else {
+%>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Ano</th>
+        <th>ISBN</th>
+        <th>Ação</th>
+
+    </tr>
+
+    <%
+        for (Livro livro : livros) {
+    %>
+
+    <tr>
+        <td><%= livro.getId() %></td>
+        <td><%= livro.getTitulo() %></td>
+        <td><%= livro.getAutor() %></td>
+        <td><%= livro.getAnopublicacao()%></td>
+        <td><%= livro.getIsbn() %></td>
+        <td>
+            <a href="livros?acao=excluir&id=<%= livro.getId() %>">Excluir</a>
+        </td>
+    </tr>
+
+    <%
+        }
+    %>
+
+</table>
+
+<%
+    }
+%>
+
+<br>
+<a href="index.jsp">Cadastrar novo livro</a>
 
 </body>
 </html>

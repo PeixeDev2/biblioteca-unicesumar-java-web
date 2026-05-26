@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import repository.LivroRepository;
 
 @WebServlet("/livros")
 public class LivroServlet extends HttpServlet {
@@ -12,6 +13,20 @@ public class LivroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String acao = request.getParameter("acao");
+
+        if ("excluir".equals(acao)) {
+            String idTexto = request.getParameter("id");
+
+            int id = Integer.parseInt(idTexto);
+
+            LivroRepository.excluirPorId(id);
+
+            response.sendRedirect("livros");
+            return;
+        }
+
+        request.setAttribute("livros", LivroRepository.listarLivros());
 
         request.getRequestDispatcher("listar.jsp").forward(request, response);
     }
@@ -24,10 +39,9 @@ public class LivroServlet extends HttpServlet {
         String ano = request.getParameter("ano");
         String isbn = request.getParameter("isbn");
 
-        System.out.println("Título recebido: " + titulo);
-        System.out.println("Autor recebido: " + autor);
-        System.out.println("Ano recebido: " + ano);
-        System.out.println("ISBN recebido: " + isbn);
+        int anoPublicacao = Integer.parseInt(ano);
+
+        LivroRepository.adicionarLivro(titulo, autor, anoPublicacao, isbn);
 
         response.sendRedirect("livros");
     }
