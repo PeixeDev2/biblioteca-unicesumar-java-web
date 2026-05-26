@@ -11,6 +11,16 @@
 <h1>Sistema Biblioteca Unicesumar</h1>
 <p>Projeto Java Web funcionando com JSP.</p>
 
+<%
+    String erro = (String) request.getAttribute("erro");
+
+    if (erro != null) {
+%>
+<p style="color: red;"><%= erro %></p>
+<%
+    }
+%>
+
 <form action="livros" method="post">
     <label>Título:</label>
     <input type="text" name="titulo">
