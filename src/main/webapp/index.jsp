@@ -41,7 +41,7 @@
 </form>
 </div>
 <br></br>
-<a href="cadastro-jsf.xhtml">Acessar interface JSF</a>
+<a href="sobre-jsf.xhtml">Informações do sistema e Contatos</a>
 
 
 </body>
