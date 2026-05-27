@@ -5,18 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Biblioteca Unicesumar</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="container">
 
 <h1>Sistema Biblioteca Unicesumar</h1>
 <p>Projeto Java Web funcionando com JSP.</p>
+
 
 <%
     String erro = (String) request.getAttribute("erro");
 
     if (erro != null) {
 %>
-<p style="color: red;"><%= erro %></p>
+    <p class="erro"><%= erro %></p>
 <%
     }
 %>
@@ -36,6 +39,7 @@
     <br></br>
     <button type="submit">Cadastrar Livro</button>
 </form>
+</div>
 <br></br>
 
 
