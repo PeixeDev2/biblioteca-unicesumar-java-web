@@ -92,4 +92,4 @@ http://localhost:8080/biblioteca/
 Projeto acadêmico desenvolvido por Daniel Peixe.
 
 - GitHub: https://github.com/PeixeDev2
-- LinkedIn: COLOQUE_AQUI_SEU_LINKEDIN
+- LinkedIn:https://www.linkedin.com/in/daniel-peixe/ 
