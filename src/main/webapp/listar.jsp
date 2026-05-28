@@ -1,6 +1,9 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="model.Livro" %>
+
+<%-- Recupera a lista de livros enviada pelo Servlet. --%>
 
 <!DOCTYPE html>
 <html>
@@ -39,7 +42,7 @@
     <%
         for (Livro livro : livros) {
     %>
-
+    <!-- Tabela responsável por exibir os livros cadastrados -->
     <tr>
         <td><%= livro.getId() %></td>
         <td><%= livro.getTitulo() %></td>

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!-- Formulário responsável pelo cadastro de livros -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 <h1>Sistema Biblioteca Unicesumar</h1>
 <p>Projeto Java Web funcionando com JSP.</p>
 
-
+    <%-- Exibe mensagem de erro enviada pelo Servlet, caso exista. --%>
 <%
     String erro = (String) request.getAttribute("erro");
 

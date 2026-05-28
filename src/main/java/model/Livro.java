@@ -1,6 +1,7 @@
+// Classe responsável por representar um livro no sistema.
 package model;
 
-//Abaixo está a classe livro e seus atributos privados
+// Atributos principais do livro.
 public class Livro {
     private int id;
     private String titulo;
@@ -8,10 +9,9 @@ public class Livro {
     private int anoPublicacao;
     private String isbn;
 
-    //Abaixo é um construtor vazio
     public Livro(){
     }
-    //Abaixo um construtor com todos os atributos
+
     public Livro(int id, String titulo, String autor, int anopublicacao, String isbn){
         this.id=id;
         this.titulo=titulo;
